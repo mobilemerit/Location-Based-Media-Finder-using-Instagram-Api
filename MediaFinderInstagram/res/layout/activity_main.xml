@@ -1,0 +1,88 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/mapLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".70"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical"
+        android:padding="4dp" >
+
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.MapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/indicatorLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#A5B0B6"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="10dp" >
+
+            <ProgressBar
+                android:id="@+id/barIndicator"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                />
+
+            <TextView
+                android:id="@+id/txtProgressIndicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:text="loading..."
+                android:layout_weight="1"
+                android:textSize="16dp"
+                android:textColor="#fff" />
+
+            <TextView
+                android:id="@+id/txtIndicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:text="Hide"
+                android:textSize="16dp"
+                android:textColor="#fff" />
+
+            <ImageView
+                android:id="@+id/imgIndicator"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_top" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/gridViewHolderLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical" >
+
+            <include
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                layout="@layout/gridview" />
+            
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
